@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Book1.class);
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Haloalkane and Haloarenes.pdf");
                 startActivity(i);
             }
         });
@@ -54,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Book2.class);
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Alcohols, Phenols and Ethers.pdf");
                 startActivity(i);
             }
         });
@@ -62,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Book3.class);
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Aldehyde Ketones.pdf");
                 startActivity(i);
             }
         });
@@ -70,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Book4.class);
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Amines.pdf");
                 startActivity(i);
             }
         });
@@ -78,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Book5.class);
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Biomolecules.pdf");
                 startActivity(i);
             }
         });
@@ -86,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Book6.class);
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Polymers.pdf");
                 startActivity(i);
             }
         });
@@ -94,7 +100,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Book7.class);
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Chemistry in Everyday Life.pdf");
                 startActivity(i);
 
             }
