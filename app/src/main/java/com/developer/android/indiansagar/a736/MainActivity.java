@@ -114,6 +114,9 @@ public class MainActivity extends AppCompatActivity {
         if (adView != null) {
             adView.destroy();
         }
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
         super.onDestroy();
     }
 
