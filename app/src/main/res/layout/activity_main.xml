@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2dd4ff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+
+        android:visibility="invisible"
+        />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        android:visibility="invisible"
+        ads:adUnitId="ca-app-pub-3972853706521135/8599687741">
+    </com.google.android.gms.ads.AdView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+
+
+
+
+    <Button
+        android:id="@+id/book1"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="75sp"
+        android:text="1.Haloalkane and Haloarenes"></Button>
+
+    <Button
+        android:id="@+id/book2"
+        android:layout_width="match_parent"
+        android:layout_height="75sp"
+        android:text="2.Alcohols, Phenols and Ethers"></Button>
+
+    <Button
+        android:id="@+id/book3"
+        android:layout_width="match_parent"
+        android:layout_height="75sp"
+        android:text="3.Aldehydes, Ketones and Carboxylic Acids"></Button>
+
+    <Button
+        android:id="@+id/book4"
+        android:layout_width="match_parent"
+        android:layout_height="75sp"
+        android:text="4.Amines"></Button>
+
+    <Button
+        android:id="@+id/book5"
+        android:layout_width="match_parent"
+        android:layout_height="75sp"
+        android:text="5. Biomolecules"></Button>
+
+    <Button
+        android:id="@+id/book6"
+        android:layout_width="match_parent"
+        android:layout_height="75sp"
+        android:text="6.Polymers"></Button>
+
+    <Button
+        android:id="@+id/book7"
+        android:layout_width="match_parent"
+        android:layout_height="75sp"
+        android:text="7.Chemistry in Everyday Life"></Button>
+    <Button
+        android:id="@+id/book8"
+        android:layout_width="match_parent"
+        android:layout_height="85sp"
+        android:background="#2dd4ff"
+        android:text="  "></Button>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+
+
+
