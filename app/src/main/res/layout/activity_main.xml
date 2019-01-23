@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3972853706521135/8599687741"></com.google.android.gms.ads.AdView>
+        ads:adUnitId=""></com.google.android.gms.ads.AdView>
 
     <ScrollView
         android:layout_width="match_parent"

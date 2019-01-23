@@ -128,11 +128,13 @@ public class MainActivity extends AppCompatActivity {
         MobileAds.initialize(this,"");
         adView=findViewById(R.id.adView);
 
+
         mAdView.setAdListener(new AdListener() {
             @Override
             public void onError(Ad ad, AdError adError) {
                 // Ad error callback
                 AdRequest adrequest=new AdRequest.Builder().build();
+
                 adView.loadAd(adrequest);
                 adView.setAdListener(new com.google.android.gms.ads.AdListener(){
                     @Override
