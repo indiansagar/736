@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             ads:adSize="BANNER"
-            ads:adUnitId=""></com.google.android.gms.ads.AdView>
+            ads:adUnitId="@string/google_banner" />
 
     </com.github.barteksc.pdfviewer.PDFView>
 

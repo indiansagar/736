@@ -1,5 +1,3 @@
-
-
 package com.developer.android.indiansagar.a736;
 
 import android.content.Intent;
@@ -19,8 +17,11 @@ import com.google.android.gms.ads.MobileAds;
 
 
 public class MainActivity extends AppCompatActivity {
+
     private AdView adView;
     private com.facebook.ads.AdView mAdView;
+    private com.google.android.gms.ads.InterstitialAd intad;
+    private com.facebook.ads.InterstitialAd interstitialAd;
 
 
     public Button btn_book1, btn_book2, btn_book3, btn_book4, btn_book5, btn_book6, btn_book7;
@@ -120,14 +121,31 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    @Override
+    public void onBackPressed() {
+        if(interstitialAd.isAdLoaded()){
+            interstitialAd.show();
+        }
+        else if(intad.isLoaded()) {
+            intad.show();
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
+
     private void loadFBAds() {
 
-        mAdView = new com.facebook.ads.AdView(this, "1989796597804099_1989798617803897", AdSize.BANNER_HEIGHT_50);
+        mAdView = new com.facebook.ads.AdView(this, getString(R.string.fb_banner), AdSize.BANNER_HEIGHT_50);
         final LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
         adContainer.addView(mAdView);
-        MobileAds.initialize(this,"");
+
+        MobileAds.initialize(this,getString(R.string.google_app_id));
         adView=findViewById(R.id.adView);
 
+        intad=new com.google.android.gms.ads.InterstitialAd(this);
+        intad.setAdUnitId(getString(R.string.google_int));
+        final AdRequest ar1=new AdRequest.Builder().build();
 
         mAdView.setAdListener(new AdListener() {
             @Override
@@ -167,6 +185,37 @@ public class MainActivity extends AppCompatActivity {
 
         mAdView.loadAd();
 
+        interstitialAd = new com.facebook.ads.InterstitialAd(this,getString(R.string.fb_int));
+        interstitialAd.setAdListener(new InterstitialAdListener() {
+            @Override
+            public void onInterstitialDisplayed(Ad ad) {
+            }
+
+            @Override
+            public void onInterstitialDismissed(Ad ad) {
+            }
+
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                intad.loadAd(ar1);
+            }
+
+            @Override
+            public void onAdLoaded(Ad ad) {
+
+            }
+
+            @Override
+            public void onAdClicked(Ad ad) {
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                // Ad impression logged callback
+            }
+        });
+
+        interstitialAd.loadAd();
 
     }
 }
