@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AdView adView;
     private com.facebook.ads.AdView mAdView;
-    private com.google.android.gms.ads.InterstitialAd intad;
+    private InterstitialAd intad;
     private com.facebook.ads.InterstitialAd interstitialAd;
 
 
