@@ -1,8 +1,10 @@
 package com.developer.android.indiansagar.a736;
 
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -140,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
         mAdView = new com.facebook.ads.AdView(this, getString(R.string.fb_banner), AdSize.BANNER_HEIGHT_50);
         final LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
         adContainer.addView(mAdView);
+        final ConstraintLayout constraintLayout = findViewById(R.id.cons);
 
         MobileAds.initialize(this,getString(R.string.google_app_id));
         adView=findViewById(R.id.adView);
@@ -151,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         mAdView.setAdListener(new AdListener() {
             @Override
             public void onError(Ad ad, AdError adError) {
+                Log.e("fb ad",adError.getErrorMessage());
                 // Ad error callback
                 AdRequest adrequest=new AdRequest.Builder().build();
 
@@ -159,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onAdLoaded() {
                         super.onAdLoaded();
+                        constraintLayout.setVisibility(View.VISIBLE);
                         adView.setVisibility(View.VISIBLE);
                     }
                 });
@@ -167,8 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdLoaded(Ad ad) {
-
-                adContainer.setVisibility(View.VISIBLE);
+                constraintLayout.setVisibility(View.VISIBLE);
                 // Ad loaded callback
             }
 
