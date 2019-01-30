@@ -1,7 +1,12 @@
 package com.developer.android.indiansagar.a736;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private InterstitialAd intad;
     private com.facebook.ads.InterstitialAd interstitialAd;
 
+    static final int REQUEST_PERMISSION_KEY = 1;
 
     public Button btn_book1, btn_book2, btn_book3, btn_book4, btn_book5, btn_book6, btn_book7;
 
@@ -35,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         loadFBAds();
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            String[] PERMISSIONS = {android.Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
+            if (!hasPermissions(this, PERMISSIONS)) {
+                requestPermissions(PERMISSIONS, REQUEST_PERMISSION_KEY);
+            }
+        }
 
         btn_book1 = (Button) findViewById(R.id.book1);
         btn_book2 = (Button) findViewById(R.id.book2);
@@ -50,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
                 i.putExtra("book_name","Haloalkane and Haloarenes.pdf");
+                i.putExtra("drive_id","1KoemlpvzTaeP6eOl6pDD5WCiBkrRvnHG");
                 startActivity(i);
             }
         });
@@ -222,5 +235,16 @@ public class MainActivity extends AppCompatActivity {
 
         interstitialAd.loadAd();
 
+    }
+
+    public static  boolean hasPermissions(Context context, String... permissions) {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
