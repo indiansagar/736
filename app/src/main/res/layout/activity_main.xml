@@ -62,46 +62,78 @@
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
-                android:text="1.Haloalkane and Haloarenes" />
+                android:text="1.Relations and Functions" />
 
             <Button
                 android:id="@+id/book2"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
-                android:text="2.Alcohols, Phenols and Ethers" />
+                android:text="2.Inverse Trigonometric Functions" />
 
             <Button
                 android:id="@+id/book3"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
-                android:text="3.Aldehydes, Ketones and Carboxylic Acids" />
+                android:text="3.Matrices" />
 
             <Button
                 android:id="@+id/book4"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
-                android:text="4.Amines" />
+                android:text="4.Determinants" />
 
             <Button
                 android:id="@+id/book5"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
-                android:text="5. Biomolecules" />
+                android:text="5.Continuity and Differentiability" />
 
             <Button
                 android:id="@+id/book6"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
-                android:text="6.Polymers" />
+                android:text="6.Application of Derivatives" />
 
             <Button
                 android:id="@+id/book7"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
-                android:text="7.Chemistry in Everyday Life" />
+                android:text="7.Integrals" />
+
+
 
             <Button
                 android:id="@+id/book8"
+                android:layout_width="match_parent"
+                android:layout_height="75sp"
+                android:text="8.Application of Integrals" />
+            <Button
+                android:id="@+id/book9"
+                android:layout_width="match_parent"
+                android:layout_height="75sp"
+                android:text="Differential Equations" />
+            <Button
+                android:id="@+id/book10"
+                android:layout_width="match_parent"
+                android:layout_height="75sp"
+                android:text="10.Vector Algebra" />
+            <Button
+                android:id="@+id/book11"
+                android:layout_width="match_parent"
+                android:layout_height="75sp"
+                android:text="11.Three Dimensional Geometry" />
+            <Button
+                android:id="@+id/book12"
+                android:layout_width="match_parent"
+                android:layout_height="75sp"
+                android:text="12.Linear Programming" />
+            <Button
+                android:id="@+id/book13"
+                android:layout_width="match_parent"
+                android:layout_height="75sp"
+                android:text="13.Probability" />
+            <Button
+                android:id="@+id/book14"
                 android:layout_width="match_parent"
                 android:layout_height="85sp"
                 android:background="#2dd4ff"

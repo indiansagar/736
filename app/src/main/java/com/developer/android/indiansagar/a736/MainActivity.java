@@ -55,13 +55,19 @@ public class MainActivity extends AppCompatActivity {
         btn_book5 = (Button) findViewById(R.id.book5);
         btn_book6 = (Button) findViewById(R.id.book6);
         btn_book7 = (Button) findViewById(R.id.book7);
+        btn_book8 = (Button) findViewById(R.id.book8);
+        btn_book9 = (Button) findViewById(R.id.book9);
+        btn_book10 = (Button) findViewById(R.id.book10);
+        btn_book11 = (Button) findViewById(R.id.book11);
+        btn_book12 = (Button) findViewById(R.id.book12);
+        btn_book13 = (Button) findViewById(R.id.book13);
 
         btn_book1.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
-                i.putExtra("book_name","Haloalkane and Haloarenes.pdf");
+                i.putExtra("book_name","Relation and Functions.pdf");
                 i.putExtra("drive_id","1KoemlpvzTaeP6eOl6pDD5WCiBkrRvnHG");
                 startActivity(i);
             }
@@ -73,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
-                i.putExtra("book_name","Alcohols, Phenols and Ethers.pdf");
+                i.putExtra("book_name","Inverse Trigonometric Functions.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
                 startActivity(i);
             }
         });
@@ -82,7 +89,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
-                i.putExtra("book_name","Aldehyde Ketones.pdf");
+                i.putExtra("book_name","Matrices.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
                 startActivity(i);
             }
         });
@@ -91,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
-                i.putExtra("book_name","Amines.pdf");
+                i.putExtra("book_name","Determinants.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
                 startActivity(i);
             }
         });
@@ -100,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
-                i.putExtra("book_name","Biomolecules.pdf");
+                i.putExtra("book_name","Continuity and Differentiability.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
                 startActivity(i);
             }
         });
@@ -109,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
-                i.putExtra("book_name","Polymers.pdf");
+                i.putExtra("book_name","Application of Derivatives.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
                 startActivity(i);
             }
         });
@@ -118,9 +129,70 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
-                i.putExtra("book_name","Chemistry in Everyday Life.pdf");
+                i.putExtra("book_name","Integrals.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
                 startActivity(i);
 
+            }
+        });
+        btn_book8.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Application of Integrals.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
+                startActivity(i);
+            }
+        });
+        btn_book9.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Differential Equations.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
+                startActivity(i);
+            }
+        });
+        btn_book10.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Vector Algebra.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
+                startActivity(i);
+            }
+        });
+        btn_book11.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Three Dimensional Geometry.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
+                startActivity(i);
+            }
+        });
+        btn_book12.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Linear Programming.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
+                startActivity(i);
+            }
+        });
+        btn_book13.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Book.class);
+                i.putExtra("book_name","Probability.pdf");
+                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
+                startActivity(i);
             }
         });
     }
