@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_PERMISSION_KEY = 1;
 
-    public Button btn_book1, btn_book2, btn_book3, btn_book4, btn_book5, btn_book6, btn_book7;
+    public Button btn_book1, btn_book2, btn_book3, btn_book4, btn_book5, btn_book6, btn_book7, btn_book8, btn_book9, btn_book10, btn_book11, btn_book12, btn_book13;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

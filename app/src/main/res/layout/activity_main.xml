@@ -59,7 +59,7 @@
 
             <Button
                 android:id="@+id/book1"
-                style="@style/Widget.AppCompat.Button"
+
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
                 android:text="1.Relations and Functions" />
@@ -99,8 +99,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
                 android:text="7.Integrals" />
-
-
 
             <Button
                 android:id="@+id/book8"
