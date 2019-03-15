@@ -65,7 +65,7 @@ public class Book extends AppCompatActivity {
         if (!new File(pathToSave+Book_name).exists())
             new DownloadFileFromURL().execute("https://docs.google.com/uc?export=download&id="+drive_id);
         else
-            book1.fromFile(new File(pathToSave+Book_name)).load();
+            book1.fromFile(new File(pathToSave+Book_name)).password("Sagarmpcs13").load();
 
     }
 
@@ -161,7 +161,7 @@ public class Book extends AppCompatActivity {
         protected void onPostExecute(String file_url) {
             // dismiss the dialog after the file was downloaded
             dismissDialog(progress_bar_type);
-            book1.fromFile(new File(pathToSave+Book_name)).load();
+            book1.fromFile(new File(pathToSave+Book_name)).password("Sagarmpcs13").load();
         }
 
     }

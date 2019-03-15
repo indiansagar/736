@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
                 i.putExtra("book_name","Relation and Functions.pdf");
-                i.putExtra("drive_id","1KoemlpvzTaeP6eOl6pDD5WCiBkrRvnHG");
+                i.putExtra("drive_id","1z-KIVvVj0Ggu2F2Gzp2HLJ8pQhsRia5l");
                 startActivity(i);
             }
         });
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
                 i.putExtra("book_name","Inverse Trigonometric Functions.pdf");
-                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
+                i.putExtra("drive_id","1KxDRLTtlvildCOJpZHLe4FKwASnc7SkT");
                 startActivity(i);
             }
         });
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
                 i.putExtra("book_name","Matrices.pdf");
-                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
+                i.putExtra("drive_id","1KxDRLTtlvildCOJpZHLe4FKwASnc7SkT");
                 startActivity(i);
             }
         });
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
                 i.putExtra("book_name","Application of Derivatives.pdf");
-                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
+                i.putExtra("drive_id","1PYRLwivpQ_1GPLt_K1aGE68wVFG7dy2z");
                 startActivity(i);
             }
         });
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
                 i.putExtra("book_name","Probability.pdf");
-                i.putExtra("drive_id","1w2m3uZtwL7xKVeuovBsKrdacUPZDDW3O");
+                i.putExtra("drive_id","1PYRLwivpQ_1GPLt_K1aGE68wVFG7dy2z");
                 startActivity(i);
             }
         });
