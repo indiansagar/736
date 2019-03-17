@@ -47,7 +47,6 @@ public class Book extends AppCompatActivity {
     private com.facebook.ads.InterstitialAd interstitialAd;
 
     private String pathToSave ;
-    private DownloadFileFromURL downloadFileFromUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,11 +186,7 @@ public class Book extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(downloadFileFromUrl!=null){
-            downloadFileFromUrl.cancel(true);
-        }
-
-        else if (interstitialAd.isAdLoaded()){
+        if (interstitialAd.isAdLoaded()){
             interstitialAd.show();
         }
         else if(intad.isLoaded()) {
