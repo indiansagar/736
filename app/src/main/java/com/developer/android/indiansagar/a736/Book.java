@@ -9,6 +9,8 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.facebook.ads.Ad;
@@ -32,6 +34,7 @@ import java.net.URLConnection;
 
 public class Book extends AppCompatActivity {
 
+
     PDFView book1;
     String Book_name;
 
@@ -44,10 +47,14 @@ public class Book extends AppCompatActivity {
     private com.facebook.ads.InterstitialAd interstitialAd;
 
     private String pathToSave ;
+    private DownloadFileFromURL downloadFileFromUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_book);
         loadFBAds();
 
@@ -80,6 +87,7 @@ public class Book extends AppCompatActivity {
                 pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                 pDialog.setCancelable(true);
                 pDialog.show();
+                pDialog.setCanceledOnTouchOutside(false);
                 return pDialog;
             default:
                 return null;
@@ -179,7 +187,11 @@ public class Book extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(interstitialAd.isAdLoaded()){
+        if(downloadFileFromUrl!=null){
+            downloadFileFromUrl.cancel(true);
+        }
+
+        else if (interstitialAd.isAdLoaded()){
             interstitialAd.show();
         }
         else if(intad.isLoaded()) {
@@ -257,9 +269,7 @@ public class Book extends AppCompatActivity {
 
             @Override
             public void onAdLoaded(Ad ad) {
-
             }
-
             @Override
             public void onAdClicked(Ad ad) {
             }

@@ -1,19 +1,26 @@
 package com.developer.android.indiansagar.a736;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
+import android.widget.Toast;
 
 
 import com.facebook.ads.*;
@@ -31,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private InterstitialAd intad;
     private com.facebook.ads.InterstitialAd interstitialAd;
 
+    private DrawerLayout drawer;
+    private ActionBarDrawerToggle abdt;
+
     static final int REQUEST_PERMISSION_KEY = 1;
 
     public Button btn_book1, btn_book2, btn_book3, btn_book4, btn_book5, btn_book6, btn_book7, btn_book8, btn_book9, btn_book10, btn_book11, btn_book12, btn_book13;
@@ -39,6 +49,67 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        drawer=(DrawerLayout)findViewById(R.id.drawer);
+        abdt = new ActionBarDrawerToggle(this, drawer, R.string.Open, R.string.Close);
+        abdt.setDrawerIndicatorEnabled(true);
+
+        drawer.addDrawerListener(abdt);
+        abdt.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationView nav_view = (NavigationView)findViewById(R.id.nav_view);
+        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                if(id == R.id.share)
+                {
+                    try {
+                        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                        shareIntent.setType("text/plain");
+                        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
+                        String shareMessage = "\nDownload The Complete 12th Maths NCERT Solution For Free!!!!\n\n";
+                        shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+                        shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                        startActivity(Intent.createChooser(shareIntent, "choose one"));
+                    } catch (Exception e) {
+                        Toast.makeText(MainActivity.this, "Error while Sharing", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                }
+                else if(id == R.id.update)
+                {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.developer.android.indiansagar.a736"));
+                    startActivity(i);
+
+                }
+                else if(id == R.id.rate)
+                {
+                    launchMarket();
+
+                }
+                else if(id == R.id.privacypolicy)
+                {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("https://12thncertsolution.blogspot.com/p/privacy-policy.html"));
+                    startActivity(i);
+
+                }
+                return true;
+            }
+        });
+
+
+
+
+
+
+
+
+
         loadFBAds();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -79,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, Book.class);
-                i.putExtra("book_name","Inverse Trigonometric Functions.pdf");
+                i.putExtra("book_name","tyet.pdf");
                 i.putExtra("drive_id","11QNHHgJUZYuqjGzr5Ew-LBMc8L6Pc2gt");
                 startActivity(i);
             }
@@ -199,6 +270,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return abdt.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onDestroy() {
         if (adView != null) {
             adView.destroy();
@@ -208,6 +284,23 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onDestroy();
     }
+
+
+
+    private void launchMarket() {
+        Uri uri = Uri.parse("market://details?id=" + getPackageName());
+        Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
+        try {
+            startActivity(myAppLinkToMarket);
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, " unable to find market app", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+
+
+
 
     @Override
     public void onBackPressed() {

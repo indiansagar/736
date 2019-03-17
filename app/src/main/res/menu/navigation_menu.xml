@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/share"
+        android:title="Share with friends"
+        android:icon="@drawable/ic_share_black_24dp"
+        >
+    </item>
+    <item
+        android:id="@+id/update"
+        android:title="Check For Update"
+        android:icon="@drawable/ic_update_black_24dp"
+        >
+    </item>
+    <item
+        android:id="@+id/rate"
+        android:title="Rate this app"
+        android:icon="@drawable/ic_star_black_24dp"
+        >
+    </item>
+    <item
+        android:id="@+id/privacypolicy"
+        android:title="Privacy Policy"
+        android:icon="@drawable/ic_lock_black_24dp"
+        >
+    </item>
+
+</menu>
